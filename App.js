@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useRef } from 'react';
+import { View, StyleSheet, Text, Animated, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import Ripple from './components.js/Ripple';
 
-export default function App() {
+const RADIUS = 80;
+const FIRST_RADIUS = 120;
+const SECOND_RADIUS = 160;
+const THIRD_RADIUS = 200;
+const FOURTH_RADIUS= 250;
+
+const App = () => {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.root}>
+      <Ripple/>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles=StyleSheet.create({
+  root : {
+    flex : 1,
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:'#242424'
+  }
+})
+
+export default App;
